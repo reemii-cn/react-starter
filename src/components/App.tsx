@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Button } from "antd";
+import React, { Component } from 'react'
+import logo from '../assets/logo.svg'
+import './App.css'
+import { Button } from 'antd'
 
 class App extends Component {
   render() {
@@ -20,11 +20,11 @@ class App extends Component {
           >
             Learn React
           </a>
-        <Button>ReeMii</Button>
+          <Button>ReeMii</Button>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

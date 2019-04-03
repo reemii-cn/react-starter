@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
-import logo from '../assets/logo.svg'
-import './App.css'
-import { Button } from 'antd'
+import { ConnectedRouter } from 'connected-react-router'
+import { createHashHistory } from 'history'
+
+const history = createHashHistory()
+
+import { Provider } from 'react-redux'
+import configureStore from 'src/redux/configureStore'
+
+import Router from 'src/router/router'
+
+const { store } = configureStore({}, history)
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>{process.env.REACT_APP_NAME}</p>
-          <Button>ReeMii</Button>
-        </header>
-      </div>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Router />
+        </ConnectedRouter>
+      </Provider>
     )
   }
 }

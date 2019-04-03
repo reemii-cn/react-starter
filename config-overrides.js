@@ -1,22 +1,12 @@
  const {
    override,
-   fixBabelImports,
-   babelInclude,
+   useBabelRc,
    addLessLoader,
    addTslintLoader
  } = require('customize-cra');
 
- const path = require("path");
-
  module.exports = override(
-   fixBabelImports('import', {
-     libraryName: 'antd',
-     libraryDirectory: 'es',
-     style: true,
-   }),
-   babelInclude([
-     path.resolve("src")
-   ]),
+   useBabelRc(),
    addLessLoader({
      javascriptEnabled: true,
      modifyVars: {

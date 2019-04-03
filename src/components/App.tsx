@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import logo from '../assets/logo.svg'
 import './App.css'
 import { Button } from 'antd'
+import Router from 'src/router/router'
+import { Storakie } from 'src/core/storage'
 
 class App extends Component {
   render() {
@@ -9,9 +11,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
+          <p>{process.env.REACT_APP_NAME}</p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -21,6 +21,7 @@ class App extends Component {
             Learn React
           </a>
           <Button>ReeMii</Button>
+          <Router />
         </header>
       </div>
     )

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css'
+import {
+  shallow
+} from 'enzyme';
+import Empty from './Empty';
 
 it('renders without crashing', () => {
-  const div = document.getElementById('root');
-  ReactDOM.render( < App / > , div);
+  shallow( < Empty / > );
 });

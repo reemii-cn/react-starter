@@ -5,7 +5,7 @@ const { Header, Sider, Content, Footer } = Layout
 
 import { Switch, Route } from 'react-router-dom'
 
-const NotFound = () => <div>not found</div>
+import NotFound from 'src/components/exception/404'
 
 export default class SiderDemo extends React.Component {
   state = {

@@ -1,2 +1,2 @@
 import Storakie from 'src/core/storage/cookie/storakie'
-export { Storakie }
+export default Storakie

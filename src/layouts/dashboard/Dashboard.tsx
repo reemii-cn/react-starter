@@ -3,7 +3,7 @@ import { Layout, Menu, Icon } from 'antd'
 
 const { Header, Sider, Content, Footer } = Layout
 
-import { Redirect, Switch, Route, RouteComponentProps } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 const NotFound = () => <div>not found</div>
 

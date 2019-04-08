@@ -5,6 +5,7 @@
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 ### Built with
+
 - typescript
 - ant design
 - redux redux-thunk redux-logger
@@ -12,12 +13,17 @@
 - connected-react-router
 
 ### Features
+
 - Friendly with your workmates, use ***typescript***.
 - Use ***less*** with Ant Design.
 - A easy to use project sturcture refer to Ant Design Pro.
 - Envirmental variable defined in .env.
+- Add authority check with different user.
+
+### Screenshots
+
+![ss1](screenshots/ss1.png)
 
 ### To Do
-- Add more pages.
-- Add authority check with different user.
-- Add Screenshots.
+
+- HMR

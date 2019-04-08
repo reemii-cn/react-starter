@@ -17,7 +17,9 @@ class Sider extends PureComponent<Prop, State> {
     return (
       <React.Fragment>
         <img src={logo} className="App-logo" alt="logo" />
-        <Menu mode="inline">{this.getNavMenuItems()}</Menu>
+        <Menu theme="dark" mode="inline">
+          {this.getNavMenuItems()}
+        </Menu>
       </React.Fragment>
     )
   }

@@ -10,12 +10,12 @@ import { getRouterData } from 'src/utils/utils'
 
 const routerConfig = [
   {
-    path: '/table/general',
+    path: '/table/basic',
     component: Table
   },
 
   {
-    path: '/chart/general',
+    path: '/table/general',
     component: Charts
   },
 

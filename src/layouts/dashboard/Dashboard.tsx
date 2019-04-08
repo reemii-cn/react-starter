@@ -3,10 +3,10 @@ import * as React from 'react'
 import { Layout, Icon } from 'antd'
 
 const { Header, Sider, Content, Footer } = Layout
-
-import { Switch, Route } from 'react-router-dom'
 import Menu from './c/menu/Menu'
-import NotFound from 'src/components/exception/404'
+import ContentComponent from './c/content/Content'
+
+import './Dashboard.less'
 
 class SiderComponent extends React.Component {
   state = {
@@ -21,7 +21,7 @@ class SiderComponent extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout className="layout-dashboard">
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <Menu />
         </Sider>
@@ -41,10 +41,7 @@ class SiderComponent extends React.Component {
               minHeight: 280
             }}
           >
-            <Switch>
-              {/* 未匹配到的路由重定向到 404 */}
-              <Route component={NotFound} />
-            </Switch>
+            <ContentComponent />
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED

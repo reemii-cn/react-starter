@@ -2,12 +2,27 @@ import * as React from 'react'
 import { Form, Icon, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import AppState from 'src/redux/appState'
+import { userLogin } from 'src/redux/user/actions'
+import { ROLE } from 'src/utils/authority'
 
 function hasErrors(fieldsError: any) {
   return Object.keys(fieldsError).some(field => fieldsError[field])
 }
 
-interface HorizontalLoginFormProps extends FormComponentProps {}
+interface HorizontalLoginFormProps extends FormComponentProps {
+  userLogin: (role: ROLE) => void
+}
+
+const mapDispatchToProps = {
+  userLogin
+}
+
+const mapStateToProps = (state: AppState) => {
+  return {}
+}
 
 class HorizontalLoginForm extends React.Component<HorizontalLoginFormProps> {
   componentDidMount() {
@@ -74,17 +89,25 @@ class HorizontalLoginForm extends React.Component<HorizontalLoginFormProps> {
           >
             Log in
           </Button>
-          <Link to="/">
-            <Button type="primary">Direct Login</Button>
-          </Link>
+          <Button
+            type="primary"
+            onClick={() => this.props.userLogin(ROLE.Admin)}
+          >
+            Direct Login
+          </Button>
         </Form.Item>
       </Form>
     )
   }
 }
 
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)
+
 const WrappedHorizontalLoginForm = Form.create({ name: 'horizontal_login' })(
   HorizontalLoginForm
 )
 
-export default WrappedHorizontalLoginForm as React.ComponentClass
+export default withConnect(WrappedHorizontalLoginForm) as React.ComponentClass

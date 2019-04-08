@@ -14,8 +14,8 @@ const Exception: SFC<Prop> = props => {
     <div>
       <Title>{title}</Title>
       <Paragraph>{content}</Paragraph>
-      <Link to="/">
-        <Button>回到首页</Button>
+      <Link to="/user/login">
+        <Button>返回登陆</Button>
       </Link>
     </div>
   )

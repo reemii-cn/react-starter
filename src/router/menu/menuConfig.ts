@@ -1,8 +1,10 @@
-const asideMenuConfig = [
+import { Menu } from 'src/types/menu'
+import { ROLE } from 'src/utils/authority'
+const asideMenuConfig: Menu[] = [
   {
     name: 'Dashboard',
     path: '/dashboard',
-    icon: 'home2',
+    icon: 'home',
     children: [
       {
         name: 'monitor',
@@ -13,7 +15,7 @@ const asideMenuConfig = [
   {
     name: 'chart',
     path: '/chart',
-    icon: 'chart1',
+    icon: 'line-chart',
     children: [
       {
         name: 'basic',
@@ -33,12 +35,12 @@ const asideMenuConfig = [
       {
         name: 'basic',
         path: '/table/basic',
-        authority: 'admin'
+        authority: [ROLE.Admin]
       },
       {
         name: 'general',
         path: '/table/general',
-        authority: 'user'
+        authority: [ROLE.User, ROLE.Admin]
       }
     ]
   },
@@ -60,7 +62,7 @@ const asideMenuConfig = [
   {
     name: 'profile',
     path: '/profile',
-    icon: 'cascades',
+    icon: 'user',
     children: [
       {
         name: 'basic',
@@ -75,7 +77,7 @@ const asideMenuConfig = [
   {
     name: 'result',
     path: '/result',
-    icon: 'edit2',
+    icon: 'hourglass',
     children: [
       {
         name: 'success',
@@ -90,7 +92,7 @@ const asideMenuConfig = [
   {
     name: 'account',
     path: '/account',
-    icon: 'person',
+    icon: 'user',
     children: [
       {
         name: 'setting',
@@ -101,7 +103,7 @@ const asideMenuConfig = [
   {
     name: 'exception',
     path: '/exception',
-    icon: 'gaojingxinxi',
+    icon: 'exception',
     children: [
       {
         name: '204',

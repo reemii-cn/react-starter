@@ -6,7 +6,8 @@ const storakie: IStorage = {
     return Cookies.get(key)
   },
   set(key: string, data: any) {
-    const option: Cookies.CookieAttributes = { secure: true }
+    // const option: Cookies.CookieAttributes = { secure: true }
+    const option: Cookies.CookieAttributes = {}
     Cookies.set(key, data, option)
   }
 }
